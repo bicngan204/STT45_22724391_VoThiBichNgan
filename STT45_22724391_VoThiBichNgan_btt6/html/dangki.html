@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Đăng Ký</title>
+  <link rel="stylesheet" href="/Tuan6/css/bootstrap.min.css">
+  <script src="/Tuan6/js/jquery-3.7.1.min.js"></script>
+  <script src="/Tuan6/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="container mt-5" style="width: 500px; border: 1px solid black;">
+    <h2 class="text-center mt-2" style="color: palevioletred;">THÔNG TIN ĐĂNG KÍ</h2>
+    <form id="dangki" class="mt-2" action="dangnhap.html" method="GET">
+      <div class="mb-3">
+        <label for="hoten" class="form-label">Họ và Tên</label>
+        <input type="text" class="form-control" id="hoten" name="hoten" placeholder="Nhập họ và tên" required>
+      </div>
+      <div class="mb-3">
+        <label for="matkhau" class="form-label">Mật khẩu</label>
+        <input type="password" class="form-control" id="matkhau" name="matkhau" placeholder="Nhập mật khẩu" required>
+      </div>
+      <button type="submit" class="btn btn-primary mb-2">Nộp</button>
+    </form>
+  </div>
+</body>
+</html>

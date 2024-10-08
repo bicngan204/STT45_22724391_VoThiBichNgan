@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3</title>
+</head>
+<body>
+    <div class="container" style="margin: 20px auto;">
+        <img id="image" src="../images/b1.jpg" width="300px" height="300px">
+        <br>
+    <button onclick="start()">Play</button>
+    <button onclick="stop()">Stop</button>
+    </div>
+    
+    <script>
+        // Mảng chứa các tên tập tin hình ảnh
+        let images = [../img]
+        let imageElement = document.getElementById('image');
+        let timer;
+        let currentIndex = 0;
+
+        // Hàm bắt đầu thay đổi hình ảnh
+        function start() {
+            timer = setInterval(function() {
+                imageElement.src = images[currentIndex];
+                currentIndex++;
+                if (currentIndex === images.length) {
+                    currentIndex = 0; // Quay lại hình đầu tiên sau khi hết mảng
+                }
+            }, 1000); // Thay đổi hình mỗi giây
+        }
+        // Hàm dừng thay đổi hình ảnh
+        function stop() {
+            clearInterval(timer);
+        }
+    </script>
+</body>
+</html>

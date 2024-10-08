@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2d</title>
+    <style>
+        * {
+            margin: 0 auto;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            margin: 0 auto;
+            width: 500px;
+            border: 2px solid black;
+            box-sizing: border;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3 style="text-align: center; margin: 10px 0">FORM ĐỊNH DẠNG</h3>
+        <form action="" class="formatform">
+            <div class="row">
+                <label for="name" style="margin: 10px 20px;">Họ và tên</label>
+                <input type="text" style="margin: 10px 20px;">
+            </div>
+            <div class="row" style="margin-bottom: 10px">
+                <label for="select" style="margin: 10px 20px;">Chọn</label>
+                <input type="radio" id="background" name="format" value="background" style="margin-left: 47px;">
+                <label for="background">Background</label>
+                <input type="radio" id="font" name="format" value="font" style="margin-left: 20px">
+                <label for="font">Font</label>
+            </div>
+            <div class="row">
+                <label for="selectcolor" style="margin-left: 20px; margin-top: 60px;">Chọn màu</label>
+                <select name="selectcolor" id="selectcolor" style="margin-left: 35px;">
+                    <option value="">Chọn màu ...</option>
+                    <option value="red">Màu đỏ</option>
+                    <option value="blue">Màu xanh dương</option>
+                    <option value="green">Màu xanh lá cây</option>
+                    <option value="yellow">Màu vàng</option>
+                </select>
+            </div>
+            <div class="row" style="margin-left: 125px;margin-top: 10px;">
+                <button type="button" onclick="applyformat ()" style="margin-right: 10px; padding: 3px;">Đổi màu</button>
+                <button type="button" onclick="resetformat ()" style="padding: 3px;">Hủy</button>
+            </div>
+            <div class="row" id="output">
+                <p id="textpreview" style="margin: 10px 20px;">You can direct link the hyperlink with the file if you know the address but this is limited by the browser. eg. if pdf reader is installed on the client then the pdf will not be downloaded instead it will be shown.</p>
+            </div>
+    </div>
+    <script>
+        function applyformat() {
+            // Get selected format (background or font)
+            let selectformat = document.querySelector('input[name="format"]:checked');
+            let selectcolor = document.getElementById("selectcolor").value;
+            let textpreview = document.getElementById("textpreview");
+
+            if (selectformat && selectcolor) {
+                if (selectformat.value === 'background') {
+                    // Change background color
+                    textpreview.style.backgroundColor = selectcolor;
+                    textpreview.style.color = ''; // Reset font color
+                } else if (selectformat.value === 'font') {
+                    // Change font color
+                    textpreview.style.color = selectcolor;
+                    textpreview.style.backgroundColor = ''; // Reset background color
+                }
+            } else {
+                alert("Vui lòng chọn định dạng và màu.");
+            }
+        }
+
+        function resetform() {
+            // Clear selections and reset the preview text
+            document.getElementById("formatform").reset();
+            let textpreview = document.getElementById("textpreview");
+            textpreview.style.backgroundColor = '';
+            textpreview.style.color = '';
+        }
+    </script>
+</body>
+</html>

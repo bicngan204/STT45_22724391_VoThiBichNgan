@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2b</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        button {
+            margin-right: 20px;
+        }
+        .error {
+            color: red;
+            visibility: hidden;
+        }
+        .result {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h2 class="text-center">PHÉP TÍNH CƠ BẢN</h2>
+        </div>
+        <form action="" class="was-validated">
+            <div class="row">
+                <label for="">Nhập số thứ nhất</label> 
+            </div>
+            <div class="row">
+                <input type="text" id="sothunhat" class="form-control" style="width: 500px;" required>
+                <div class="error" id="error1">Vui lòng nhập một số hợp lệ</div>
+            </div>
+            <div class="row">
+                <label for="">Nhập số thứ hai</label>
+            </div>
+            <div class="row">
+                <input type="text" id="sothuhai" class="form-control" style="width: 500px;" required>
+                <div class="error" id="error2">Vui lòng nhập một số hợp lệ</div>
+            </div>
+            <div class="row mt-2">
+                <button class="w-auto btn btn-primary" type="button" onclick="calculate('add')">Cộng</button>
+                <button class="w-auto btn btn-success" type="button" onclick="calculate('subtract')">Trừ</button>
+                <button class="w-auto btn btn-danger" type="button" onclick="calculate('multiply')">Nhân</button>
+                <button class="w-auto btn btn-warning" type="button" onclick="calculate('divide')">Chia</button>
+                <button class="w-auto btn btn-secondary" type="button" onclick="calculate('mod')">Chia dư</button>
+            </div>
+            <div class="row mt-2">
+                <label for="" style="font-size: 18px;">Kết quả</label>
+                <div class="result" id="result"></div>
+            </div>
+        </form>
+    </div>
+    <script>
+        // Hàm kiểm tra xem giá trị nhập vào có phải số hay không
+        function isNumber(value) {
+            return !isNaN (value) && value.trim () !== '';
+        }
+
+         // Hàm thực hiện phép tính
+         function calculate(operation) {
+            // Lấy giá trị từ các ô input
+            let sothunhat = document.getElementById('sothunhat').value;
+            let sothuhai = document.getElementById('sothuhai').value;
+            let error1 = document.getElementById('error1');
+            let error2 = document.getElementById('error2');
+            
+            // Đặt lại lỗi
+            error1.style.visibility = 'hidden';
+            error2.style.visibility = 'hidden';
+
+            // Kiểm tra xem cả hai giá trị nhập vào có phải là số không
+            if (!isNumber(sothunhat)) {
+                error1.style.visibility = 'visible';
+                return;
+            }
+            if (!isNumber(sothuhai)) {
+                error2.style.visibility = 'visible';
+                return;
+            }
+
+            // Chuyển giá trị sang kiểu số
+            sothunhat = parseFloat(sothunhat);
+            sothuhai = parseFloat(sothuhai);
+
+            let result;
+            // Thực hiện các phép tính dựa trên loại phép toán được chọn
+            switch (operation) {
+                case 'add':
+                    result = sothunhat + sothuhai;
+                    break;
+                case 'subtract':
+                    result = sothunhat - sothuhai;
+                    break;
+                case 'multiply':
+                    result = sothunhat * sothuhai;
+                    break;
+                case 'divide':
+                    if (sothuhai === 0) {
+                        result = "Không thể chia cho 0";
+                    } else {
+                        result = sothunhat / sothuhai;
+                    }
+                    break;
+                case 'mod':
+                    if (sothuhai === 0) {
+                        result = "Không thể chia cho 0";
+                    } else {
+                        result = sothunhat % sothuhai;
+                    }
+                    break;
+                default:
+                    result = "Phép tính không hợp lệ!";
+            }
+            // Hiển thị kết quả
+            document.getElementById('result').innerText = result;
+        }
+    </script>
+</body>
+</html>

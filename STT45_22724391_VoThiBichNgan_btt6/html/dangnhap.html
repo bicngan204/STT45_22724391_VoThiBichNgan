@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thông Tin Đăng Nhập</title>
+  <link rel="stylesheet" href="/Tuan6/css/bootstrap.min.css">
+  <script src="/Tuan6/js/jquery-3.7.1.min.js"></script>
+  <script src="/Tuan6/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="container mt-5" style="border: 1px solid black;">
+    <h2 class="text-center mt-2" style="color: palevioletred;">Thông Tin Đăng Nhập</h2>
+    <div id="dangnhap" class="mt-2">
+      <p><strong>Username:</strong> <span id="username"></span></p>
+      <p><strong>Password:</strong> <span id="userpassword"></span></p>
+    </div>
+  </div>
+
+  <!-- JavaScript để lấy dữ liệu từ URL -->
+  <script>
+    // Lấy query string từ URL
+    const params = new URLSearchParams(window.location.search);
+
+    // Lấy giá trị của các tham số từ URL
+    const hoten = params.get('hoten');
+    const matkhau = params.get('matkhau');
+
+    // Hiển thị thông tin
+    document.getElementById('username').textContent = hoten;
+    document.getElementById('userpassword').textContent = matkhau;
+  </script>
+</body>
+</html>

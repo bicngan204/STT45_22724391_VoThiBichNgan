@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chọn Loại Cafe</title>
+    <style>
+        #result {
+            color: red;
+        }
+        .container {
+            width: 400px;
+            border: 2px solid black;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3 style="text-align: center;">Chọn loại cafe:</h3>
+        <form id="coffeeForm" style="margin-left: 10px;">
+            <input type="checkbox" id="trungnguyen" value="Trung Nguyen"> Trung Nguyen <br>
+            <input type="checkbox" id="mekong" value="Me Kong"> Me Kong <br>
+            <input type="checkbox" id="newlife" value="New Life"> New Life <br>
+            <input type="checkbox" id="oceanblue" value="Ocean Blue"> Ocean Blue <br>
+            <input type="checkbox" id="bluespace" value="Blue Space"> Blue Space <br>
+            <input type="checkbox" id="windows" value="Windows"> Windows <br><br>
+            <button type="button" onclick="displaySelected()">Chọn</button>
+        </form>
+        <p style="font-size: 18px; margin-left: 10px;" id="result">Bạn chọn cafe:</p>
+    </div>
+
+    <script>
+        function displaySelected() {
+            // Lấy tất cả các checkbox
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            let selected = [];
+            
+            // Lặp qua từng checkbox để tìm những checkbox được chọn
+            checkboxes.forEach((checkbox) => {
+                if (checkbox.checked) {
+                    selected.push(checkbox.value);
+                }
+            });
+
+            // Hiển thị kết quả
+            document.getElementById('result').innerHTML = "Bạn chọn cafe: " + selected.join(", ");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script scr="./js/jquery-3.7.1.min.js"></script>
+    <style>
+        table{
+            font-weight: bold;
+        }
+        #modal {
+            position:absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: fit-content;
+            width: fit-content;
+
+        }
+        li {
+            cursor: pointer;
+        }
+        span {
+            color: red;
+
+        }
+        .row {
+            height: 50px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="img-fluid w-100">
+        <img src="../IMG/HEADER.PNG" class="w-100" alt="">
+
+    </div>
+    <div>
+        <h1 class="text-center">DANH SÁCH THAM GIA ĐỘI ROBOCON KHOA CNTT</h1>
+    </div>
+    <ul class ="nav">
+        <li class="nav-item nav-link">Đăng nhập</li>
+        <li class="nav-item nav-link" id="open">Đăng kí</li>
+    </ul>
+    <table class="table table-bordered" id="table">
+        <thead>
+            <td>STT</td>
+            <td>Mã sinh viên</td>
+            <td>Họ tên</td>
+            <td>Lập</td>
+            <td>Ngày tham gia</td>
+            <td>Điện thoại</td>
+            <td>Email</td>
+        </thead>
+    </table>
+    <div class="row">
+        <div class="col -4 col-md-4">
+            <h6>
+                SVTH: Võ Thị Bích Ngân
+            </h6>
+        </div>
+        <div class="col -4 col-md-4">
+            <h6>
+                MSSV: 22724391
+            </h6>
+        </div>
+        <div class="col -4 col-md-4">
+            <h6>
+                Lớp: DHTMDT18B
+            </h6>
+        </div>
+    </div>
+    <div class="shadow-1g p-3 bg-white modal" id="modal">
+        <div class="modal-header d-flex align-items-center">
+            <div class="modal-title">
+               <h3>THÔNG TIN CÁ NHÂN</h1>
+            </div>
+            <p class="btn btn-close" id="close" style="font-size: 25px; font-weight: bold;">
+        </div>
+        <div class="modal-content p-2" style = "row-gap: 10px;">
+            <div class="row">
+                <label for="" class="col-5">Mã thành viên:</label>
+                <div class="col-7">
+                    <input type="text" id="id" class="form-control" placeholder="Mã: K16-123456789">
+                    <span id="er-id">*</span>
+                </div>
+                </div>
+                <div class="row">
+                    <label for="" class="col-5">Họ tên: </label>
+                    <div class="col-7">
+                        <input type="text" id="name" class="form-control" placeholder="Họ tên: Tran Anh Dung">
+                        <span id="er-name">*</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <lable class="col-5">Lớp: </lable>
+                    <div class="col-7">
+                        <input type="text" id="class" class="form-control" placeholder="Lớp: DHCTPM16ATT">
+                        <span id="er-class">*</span>
+                     </div>
+                 </div>
+                 <div class="row">
+                 <lable class="col-5">Ngày tham gia:</lable>
+                 <div class="col-7">
+                    <input type="date" id="date" class="form-control" placeholder="mm/dd/yyyy">
+                    <span id="er-date">*</span>
+                 </div>
+             </div>
+             <div class="row">
+                 <lable class="col-5">Số điện thoại: </lable>
+                 <div class="col-7">
+                     <input type="text" id="phone" class="form-control" placeholder="SDT: 8xxx-xxx-xxx">
+                     <span id="er-phone">*</span>
+                 </div>
+             </div>
+             <div class="row">
+                 <lable class="col-5">Email:</lable>
+                 <div class="col-7">
+                     <input type="email" id="email" class="form-control" placeholder="Email: xxxxxx@luh.edu.vn">
+                     <span id="er-email">*</span>
+                 </div>
+             </div>
+             <div class="modal-footer row">
+                 <button class="btn btn-success col-12" id="submit">Luu</button>
+            </div>
+         </div>
+             
+     </div>
+ </body>
+ <script>
+     var modal = document.getElementById("modal");
+     document.getElementById("open").addEventListener("click", function() {
+         modal.style.display ="block";
+     });
+     document.getElementById("close").addEventListener("click", function(){
+         modal.style.display="none";
+     });
+     var stt= 36;
+     document.getElementById("submit").addEventListener("click", function() {
+         var id = document.getElementById("id").value;
+         var name = document.getElementById("name").value;
+         var lop = document.getElementById("class").value;
+         var date = document.getElementById("date").value;
+         var phone = document.getElementById("phone").value;
+         var email = document.getElementById("email").value;
+         var erId = document.getElementById("er-id");
+         var erName = document.getElementById("er-name");
+         var erLop = document.getElementById("er-class");
+         var erDate = document.getElementById("er-date");
+         var erPhone = document.getElementById("is-phone");
+         var isEmail = document.getElementById("is-email");
+         var regrecId = /K16[0-9]{9}$/;
+         varregregName =  /(^[A-Z]{1} [a-z]+)(\s[A-Z]{1}[a-z]*)$/;
+         var regrecClass = /[A-Z0-9]{11}$/;
+         var regrecPhone = /^[0-9]{9}$/;
+         varregregEmail = /^[\w-\.]@luh.edu.vn$/;
+         var dateInForm = new Date (date)
+         var today = new Date(today);
+         var checkDate = new Date (today);
+         checkDate.setDate(today.getDate() + 30);
+         var table = document.getElementById("table");
+         if (id ===""|| name ==="" || lop ==="" || date ===""|| phone ==="" || email ===""||
+            !regexID.test(id) || !regexName.test(name) || !regexClass.test(lop) || checkDate > dateInForm ||
+            !regexPhone.test(phone) || !regexEmail.test(email)) { 
+        if (id="")
+            erId. innerText = "Hãy nhập mã!";
+        else if (!regexId.test(id))
+            erId. innerText = "Mã sai định dạng!";
+        else
+            erId.innerText = "";
+        if (name === "")
+            erName.innerText = "Hãy nhập tên!";
+        else if (IregexName.test(name))
+            erName.innerText = "Tên sai định dạng!";
+        else
+            erName.innerText = "";
+        if (lop=== "")
+            erLop.innerText = "Hãy nhập lớp!";
+        else if (!regexClass.test(lop))
+            erLop.innerText = "Lớp sai định dạng!";
+        else
+            erLop.innerText = "";
+        if (date=== "")
+            erDate.innerText = "Hãy nhập ngày!";
+        else if (checkDate > dateInForm) 
+            erDate.innerText  = "Ngày sai";
+        else
+            erDate.innerText = "";
+        if ( phone === "")
+            erPhone.innerText = "Hãy nhập sdt!";
+        else if (!regexPhone.test(phone))
+            erPhone. innerText  = "SDT sai định dạng!";
+        else
+            erPhone. innerText = "";
+        if (email === "")
+            erEmail.innerText = "Hãy nhập email!";
+        else if (IregexEmail.test(email))
+            erEmail.innerText = "Email sai định dạng!";
+        else
+            erEmail.innerText = "";
+    } else {
+        let html = 
+           '<tr>';
+              '<td>$(stt++)</td>';
+              '<td>$(id)</td>';
+              '<td>$(name)</td>';
+              '<td>$(flop)</td>';
+              '<td>$(date)</td>';
+              '<td>$(dien thoai)</td>';
+              '<td>$(email)</td>';
+           '</tr>';
+        let row = table.insertRow(); 
+        row.innerHTML = html;
+        modal.style.display = "none";
+        resetForm();
+    }
+    function resetForm() {
+        document.getElementById("id").value = "";
+        document.getElementById("name").value = "";
+        document.getElementById("class").value = "";
+        document.getElementById("date").value = "";
+        document.getElementById("phone").value = "";
+        document.getElementById("email").value = "";
+    }
+  })
+</script>
+    
+</body>
+</html>

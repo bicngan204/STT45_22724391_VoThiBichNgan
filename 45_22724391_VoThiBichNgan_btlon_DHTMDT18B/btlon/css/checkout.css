@@ -1,0 +1,206 @@
+.container .main-banner {
+    width: 100%;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 365px;
+    position: relative;
+    z-index: 0;
+    background-image: url('../img/bg_1.jpg');
+}
+
+.container .main-banner .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #000000;
+    opacity: 0.2;
+}
+
+.container .main-banner .main-banner-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container .main-banner  .breadcrumbs{
+    margin: 0;
+    color: #ddd;
+}
+.container .main-banner  .breadcrumbs .link{
+    color: #fff;
+    text-decoration: none;
+}
+.container .main-banner  .breadcrumbs .link:hover{
+    color: #000;
+}
+.container .main-banner .main-title {
+
+    font-size: 45px;
+    line-height: 80px;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+}
+.container .checkout-container{
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 70px 30px;
+    gap: 30px;
+}
+.container .checkout-container .info-container{
+    width: 60%;
+}
+.container .checkout-container .info-container form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.container .checkout-container .info-container form .input-field{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.container .checkout-container .info-container form .input-field input{
+    font-size: 15px;
+    line-height: 27px;
+    height: 40px;
+    border-radius: 0;
+    border: 1px solid #eee;
+    outline: none;
+}
+.container .checkout-container .billing-container{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.container .checkout-container .billing-container .product-container{
+    padding: 20px;
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.billing-container .product-container .ct-title{
+    margin: 0;
+    font-size: 22px;
+    line-height: 32px;
+    font-weight: 600;
+}
+.billing-container .product-container .amount-ct{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.billing-container .product-container .amount-ct .item,
+.billing-container .product-container .total-price .item
+{
+    display: flex;
+    color: #888;
+}
+.billing-container .product-container .amount-ct .item .item-name,
+.billing-container .product-container .total-price .item .item-name
+{
+    width: 40%;
+}
+.billing-container .product-container .amount-ct .item .item-value,
+.billing-container .product-container .total-price .item .item-value
+{
+    width: 60%;
+}
+.billing-container .product-container .total-price{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+.billing-container .product-container .total-price .item{
+    color: #000;
+}
+.billing-container .product-container .total-price .item .item-value{
+    font-weight: 700;
+}
+.billing-container .button-container {
+    text-align: center;
+}
+.billing-container .button-container .btn-checkout{
+    padding: 15px 45px;
+    background-color: #c74b25;
+    border-radius: 50px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+.billing-container .button-container .btn-checkout:hover{
+    background-color: #000;
+}
+
+.container .form-register {
+    background-color: #f7f6f2;
+}
+
+.container .form-register .form {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 70px 30px;
+    display: flex;
+    align-items: center;
+}
+
+.container .form-register .form .form-item {
+    width: 50%;
+}
+
+.container .form-register .form .form-title {
+    font-size: 22px;
+    margin: 0;
+    margin-bottom: 10px;
+}
+.container .form-register .form .form-item{
+    height: 100%;
+}
+.container .form-register .form .email-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.container .form-register .form .email-input {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    flex: 1;
+}
+
+.container .form-register .form .email-submit {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #c74b25;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.container .form-register .form .email-submit:hover {
+    background-color: #c74b25;
+    /* Màu thay đổi khi hover */
+}
+
+.container .form-register .form .email-input:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    /* Hiệu ứng khi input được focus */
+}

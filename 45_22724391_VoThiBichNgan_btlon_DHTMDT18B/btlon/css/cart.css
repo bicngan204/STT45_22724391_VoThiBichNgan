@@ -1,0 +1,218 @@
+.container .main-banner {
+    width: 100%;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 365px;
+    position: relative;
+    z-index: 0;
+    background-image: url('../img/bg_1.jpg');
+}
+
+.container .main-banner .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #000000;
+    opacity: 0.2;
+}
+
+.container .main-banner .main-banner-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .main-banner .breadcrumbs {
+    margin: 0;
+    color: #ddd;
+}
+
+.container .main-banner .breadcrumbs .link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.container .main-banner .breadcrumbs .link:hover {
+    color: #000;
+}
+
+.container .main-banner .main-title {
+
+    font-size: 45px;
+    line-height: 80px;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+}
+
+.cart-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cart-table th,
+.cart-table td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-table img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.cart-table .quantity {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.cart-table button {
+    width: 30px;
+    height: 30px;
+    background-color: #000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.cart-table button:hover {
+    background-color: #c74b25;
+}
+
+.cart-table input[type="number"] {
+    width: 50px;
+    text-align: center;
+    border: 1px solid #ccc;
+    outline: none;
+    border-radius: 50px;
+}
+
+.cart-table .quantity input[type="number"]::-webkit-inner-spin-button,
+.cart-table .quantity input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.checkout {
+    text-align: right;
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.checkout-btn {
+    background-color: #c74b25;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 0;
+    cursor: pointer;
+    font-size: 16px;
+    width: fit-content;
+    height: auto;
+    border: none;
+    text-decoration: none;
+}
+
+.checkout-btn:hover {
+    background-color: #000;
+}
+
+.container .form-register {
+    background-color: #f7f6f2;
+}
+
+.container .form-register .form {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 70px 30px;
+    display: flex;
+    align-items: center;
+}
+
+.container .form-register .form .form-item {
+    width: 50%;
+}
+
+.container .form-register .form .form-title {
+    font-size: 22px;
+    margin: 0;
+    margin-bottom: 10px;
+}
+.container .form-register .form .form-item{
+    height: 100%;
+}
+.container .form-register .form .email-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.container .form-register .form .email-input {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    flex: 1;
+}
+
+.container .form-register .form .email-submit {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #c74b25;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.container .form-register .form .email-submit:hover {
+    background-color: #c74b25;
+    /* Màu thay đổi khi hover */
+}
+
+.container .form-register .form .email-input:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    /* Hiệu ứng khi input được focus */
+}
+
+/* responsive */
+@media(max-width:1023px){
+    .cart-table-container{
+        overflow-x: auto;
+        width: 100%;
+    }
+    .cart-table-container .cart-table{
+        min-width: 1140px;
+    }
+}
+@media(max-width:767px){
+    .cart-table-container .cart-table{
+        min-width: 700px;
+    }
+}
